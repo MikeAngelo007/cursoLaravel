@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container"></br>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -16,7 +16,8 @@
                         Crear producto
                     </div>
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{ route('products.store') }}" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <label for="">Descripcion</label>
                                 <input type="text" class="form-control" name="description" id="">
