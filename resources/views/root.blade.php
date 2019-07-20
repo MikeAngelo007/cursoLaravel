@@ -47,7 +47,9 @@
             .title {
                 font-size: 84px;
             }
-
+            a{
+                text-decoration: none; 
+            }
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -81,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Tienda
+                    <a href="{{route('products.index')}}">Tienda</a>
                 </div>
 
                 <div class="links">
