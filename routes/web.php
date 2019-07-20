@@ -15,15 +15,9 @@ use App\Product;
 
 
 Route::middleware('auth')->group(function(){
-    Route::get('/', function () {
-        return view('root');
-    });
+    
 
-    Route::get('products',function(){
-        //$products = Product::all();
-        $products = Product::orderBy('created_at','desc')->get();
-        return view('products.index',compact('products'));
-    })->name('products.index');
+    
     
     Route::get('products/create',function(){
         return view('products.create');
@@ -60,8 +54,15 @@ Route::middleware('auth')->group(function(){
         return redirect()->route('products.index')->with('info','Producto actualizado');
     })->name('products.update');
 });
+Route::get('products',function(){
+    //$products = Product::all();
+    $products = Product::orderBy('created_at','desc')->get();
+    return view('products.index',compact('products'));
+})->name('products.index');
 
-
+Route::get('/', function () {
+    return view('root');
+});
 
 /* Route::get('/',function(){
     return 'Esta es la URL raiz';
