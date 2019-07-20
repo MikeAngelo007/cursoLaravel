@@ -38,7 +38,7 @@
                                             {{$product->price}}
                                         </td>
                                         <td>
-                                            <a href="" class="btn btn-info btn-sm">Editar</a>
+                                        <a href="{{ route('products.edit', $product->id)}}" class="btn btn-warning btn-sm">Editar</a>
                                             <a href="javascript:document.getElementById('delete-{{$product->id}}').submit()" class="btn btn-danger btn-sm">Eliminar</a>
                                         <form id="delete-{{$product->id}}" action="{{ route('products.destroy',$product->id)}}" method="POST">
                                                 @method('delete')
